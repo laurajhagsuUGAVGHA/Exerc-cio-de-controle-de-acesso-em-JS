@@ -14,5 +14,32 @@
     <button type="submit">Verificar Acesso</button>
   </form>
   <p id="accessStatus"></p>
+
+  <script>
+    function verificar(numerodocartao) {
+      const numerodocartao = parseInt(numerodocartao);
+      if (numerodecartaoanalisado >= 1000 && numerodecartaoanalisado <= 1999) {
+        return 'Acesso permitido em todas as áreas restritas.';
+      } 
+      else if (numerodecartaoanalisado >= 2000 && numerodecartaoanalisado <= 2999) {
+
+        return 'Acesso permitido em algumas áreas restritas.';
+      } 
+      
+      else {
+        return 'Acesso negado. Sem permissão para acessar áreas restritas.';
+      }
+    }
+
+    const form = document.getElementById('formulariodeacesso');
+    const accessStatus = document.getElementById('statusdeacesso');
+
+    form.addEventListener('enviar', function (evento) {
+      event.preventDefault();
+      const cardNumber = document.getElementById('cardNumber').value;
+      const message = checkAccess(numerodecartao);
+      statusdeacesso.textContent = message;
+    });
+  </script>
 </body>
 </html>
