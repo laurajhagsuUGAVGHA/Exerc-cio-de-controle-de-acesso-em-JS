@@ -1,45 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Controle de Acesso</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acesso empresa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <p class="paragrafo">Controle do acesso</p>
-  <form id="formulario para acesso">
-    <label for="cardNumber">Número do Cartão de Identificação:</label>
-    <input type="text" id="cardNumber" required>
-    <button type="submit">Verificar Acesso</button>
-  </form>
-  <p id="accessStatus"></p>
+<body id="corpo" class="acesso">
+    Acesso aos setores da empresa.
+<h1 id="titulo"></h1>
+<button onclick="acesso()" class="btn-class-name">
+    <span class="back"></span>
+    <span class="front">Verificação de acesso</span>
+  </button>
 
-  <script>
-    function verificar(numerodocartao) {
-      const numerodocartao = parseInt(numerodocartao);
-      if (numerodecartaoanalisado >= 1000 && numerodecartaoanalisado <= 1999) {
-        return 'Acesso permitido em todas as áreas restritas.';
-      } 
-      else if (numerodecartaoanalisado >= 2000 && numerodecartaoanalisado <= 2999) {
-
-        return 'Acesso permitido em algumas áreas restritas.';
-      } 
-      
-      else {
-        return 'Acesso negado. Sem permissão para acessar áreas restritas.';
-      }
-    }
-
-    const form = document.getElementById('formulariodeacesso');
-    const accessStatus = document.getElementById('statusdeacesso');
-
-    form.addEventListener('enviar', function (evento) {
-      event.preventDefault();
-      const cardNumber = document.getElementById('cardNumber').value;
-      const message = checkAccess(numerodecartao);
-      statusdeacesso.textContent = message;
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
